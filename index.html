@@ -1,533 +1,719 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US" class="no-js no-svg">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Senarc</title>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="assets/css/magnific-popup.css">
+  <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+  <link rel='stylesheet' id='wow-css' href='assets/css/wow.css' />
+  <link rel='stylesheet' href='assets/css/senarc-style.css' media='all' />
+  <link rel='stylesheet' id='responsive-css' href='assets/css/responsive.css' media='all' />
+  <link rel='stylesheet' id='js_composer_front-css' href='assets/css/js_composer.min.css' media='all' />
+
+  <script src='assets/js/jquery.min.js' id='jquery-core-js'></script>
+  <script src='assets/js/jquery-migrate.min.js' id='jquery-migrate-js'></script>
+  <script src="assets/js/dat.gui.min.js"></script>
+  <style data-type="vc_shortcodes-custom-css">
+    .vc_custom_1563626954744 {
+      margin-top: 60px !important;
+      margin-bottom: 60px !important;
+      background-color: #ffffff !important;
+      border-radius: 10px !important;
+    }
+
+    .vc_custom_1562676942695 {
+      padding-bottom: 0px !important;
+    }
+
+    .vc_custom_1562669902132 {
+      margin-bottom: 60px !important;
+      background-color: #ffffff !important;
+      border-radius: 10px !important;
+    }
+
+    .vc_custom_1560861168150 {
+      padding-bottom: 15px !important;
+    }
+
+    .vc_custom_1563341092989 {
+      padding-bottom: 60px !important;
+    }
+
+    .vc_custom_1562240267407 {
+      padding-top: 140px !important;
+    }
+
+    .vc_custom_1562240288183 {
+      padding-top: 140px !important;
+    }
+
+    .vc_custom_1560861168150 {
+      padding-bottom: 15px !important;
+    }
+  </style><noscript>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-html, body { 
-  
-  margin: 0;
-  height: 100%;
-  overflow: hidden;
-  font-family: 'Roboto' !important; 
-  color: white;
-  font-size: 9px;
-}
-
-#magic {
-
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  display: block;
-  top: 0;
-  left: 0;
-  z-index: -9999;
-}
-
-.playground{
-
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  display: block;
-  top: 0;
-  left: 0;
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-
-}
-.bottomPosition{
-
-  text-align: center;
-  margin-bottom: 50px;
-  
-}
-.minText{
-  
-  font-size: 14px;
-}
-
-a {
-  color: white;
-  font-size: 12px;
-  text-decoration: none;
-}
-
-.logo {
-    width: 50px;
-    height: 50px;
-}
-
+      .wpb_animate_when_almost_visible {
+        opacity: 1;
+      }
     </style>
+  </noscript>
+  <script>
+    window.ga = window.ga || function () {
+      (ga.q = ga.q || []).push(arguments)
+    };
+    ga.l = +new Date;
+    ga('create', 'UA-105392568-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
 </head>
-<body>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<script>
-		let icons = document.querySelectorAll(".ico");
- let length = icons.length;
- 
- icons.forEach((item, index) => {
-   item.addEventListener("mouseover", (e) => {
-     focus(e.target, index);
-   });
-   item.addEventListener("mouseleave", (e) => {
-     icons.forEach((item) => {
-       item.style.transform = "scale(1)  translateX(0px)";
-     });
-   });
- });
- 
- const focus = (elem, index) => {
-   let previous = index - 1;
-   let previous1 = index - 2;
-   let next = index + 1;
-   let next2 = index + 2;
- 
-   if (previous == -1) {
-     console.log("first element");
-     elem.style.transform = "scale(1.5)  translateX(10px)";
-   } else if (next == icons.length) {
-     elem.style.transform = "scale(1.5)  translateX(10px)";
-     console.log("last element");
-   } else {
-     elem.style.transform = "scale(1.5)  translateX(10px)";
-     icons[previous].style.transform = "scale(1.2) translateX(6px)";
-     icons[previous1].style.transform = "scale(1.1)";
-     icons[next].style.transform = "scale(1.2) translateX(6px)";
-     icons[next2].style.transform = "scale(1.1)";
-   }
- };
-	</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r125/three.min.js"></script>
-    <script type="x-shader/x-vertex" id="vertexshader">
 
-  attribute float size;
-  attribute vec3 customColor;
-  varying vec3 vColor;
+<body data-spy="scroll" data-offset="80"
+  class="home page-template-default page page-id-6 senarc-front-page has-header-image page-two-column colors-light wpb-js-composer js-comp-ver-6.6.0 vc_responsive">
 
-  void main() {
-
-    vColor = customColor;
-    vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
-    gl_PointSize = size * ( 300.0 / -mvPosition.z );
-    gl_Position = projectionMatrix * mvPosition;
-
-  }
-
-</script>
-<script type="x-shader/x-fragment" id="fragmentshader">
-
- uniform vec3 color;
- uniform sampler2D pointTexture;
-
- varying vec3 vColor;
-
- void main() {
-
-   gl_FragColor = vec4( color * vColor, 1.0 );
-   gl_FragColor = gl_FragColor * texture2D( pointTexture, gl_PointCoord );
-
- }
-</script>
-<div id="magic"></div>
-<div class="playground">
-  <div class="bottomPosition">
-     <a target="_blank"><img src="./assets/logo-2.png" width="50px" alt=""></a>
-        <h1 class="special">SENARC <br><span class="minText">Powerful by Default. Secure by Design.</span></h1>
+  <div class="theBall-outer">
+    <div class="theBall"></div>
   </div>
-</div>
-<script>
-    const preload = () => {
 
-  let manager = new THREE.LoadingManager();
-  manager.onLoad = function() { 
-    const environment = new Environment( typo, particle );
-  }
-
-  var typo = null;
-  const loader = new THREE.FontLoader( manager );
-  const font = loader.load('https://res.cloudinary.com/dydre7amr/raw/upload/v1612950355/font_zsd4dr.json', function ( font ) { typo = font; });
-  const particle = new THREE.TextureLoader( manager ).load( 'https://res.cloudinary.com/dfvtkoboz/image/upload/v1605013866/particle_a64uzf.png');
-
-}
-
-if ( document.readyState === "complete" || (document.readyState !== "loading" && !document.documentElement.doScroll))
-  preload ();
-else
-  document.addEventListener("DOMContentLoaded", preload ); 
-
-class Environment {
-
-  constructor( font, particle ){ 
-
-    this.font = font;
-    this.particle = particle;
-    this.container = document.querySelector( '#magic' );
-    this.scene = new THREE.Scene();
-    this.createCamera();
-    this.createRenderer();
-    this.setup()
-    this.bindEvents();
-  }
-
-  bindEvents(){
-
-    window.addEventListener( 'resize', this.onWindowResize.bind( this ));
-    
-  }
-
-  setup(){ 
-
-    this.createParticles = new CreateParticles( this.scene, this.font,             this.particle, this.camera, this.renderer );
-  }
-
-  render() {
-    
-     this.createParticles.render()
-     this.renderer.render( this.scene, this.camera )
-  }
-
-  createCamera() {
-
-    this.camera = new THREE.PerspectiveCamera( 65, this.container.clientWidth /  this.container.clientHeight, 1, 10000 );
-    this.camera.position.set( 0,0, 100 );
-
-  }
-
-  createRenderer() {
-
-    this.renderer = new THREE.WebGLRenderer();
-    this.renderer.setSize( this.container.clientWidth, this.container.clientHeight );
-
-    this.renderer.setPixelRatio( Math.min( window.devicePixelRatio, 2));
-
-    this.renderer.outputEncoding = THREE.sRGBEncoding;
-    this.container.appendChild( this.renderer.domElement );
-
-    this.renderer.setAnimationLoop(() => { this.render() })
-
-  }
-
-  onWindowResize(){
-
-    this.camera.aspect = this.container.clientWidth / this.container.clientHeight;
-    this.camera.updateProjectionMatrix();
-    this.renderer.setSize( this.container.clientWidth, this.container.clientHeight );
-
-  }
-}
-
-class CreateParticles {
-	
-	constructor( scene, font, particleImg, camera, renderer ) {
-    
-		this.scene = scene;
-		this.font = font;
-		this.particleImg = particleImg;
-		this.camera = camera;
-		this.renderer = renderer;
-		
-		this.raycaster = new THREE.Raycaster();
-		this.mouse = new THREE.Vector2(-200, 200);
-		
-		this.colorChange = new THREE.Color();
-
-		this.buttom = false;
-
-		this.data = {
-
-			text: 'COMING\n  SOON',
-			amount: 1500,
-			particleSize: 1,
-			particleColor: 0xffffff,
-			textSize: 16,
-			area: 250,
-			ease: .05,
-		}
-
-		this.setup();
-		this.bindEvents();
-
-	}
-
-
-	setup(){
-
-		const geometry = new THREE.PlaneGeometry( this.visibleWidthAtZDepth( 100, this.camera ), this.visibleHeightAtZDepth( 100, this.camera ));
-		const material = new THREE.MeshBasicMaterial( { color: 0x00ff00, transparent: true } );
-		this.planeArea = new THREE.Mesh( geometry, material );
-		this.planeArea.visible = false;
-		this.createText();
-
-	}
-
-	bindEvents() {
-
-		document.addEventListener( 'mousedown', this.onMouseDown.bind( this ));
-		document.addEventListener( 'mousemove', this.onMouseMove.bind( this ));
-		document.addEventListener( 'mouseup', this.onMouseUp.bind( this ));
-		
-	}
-
-	onMouseDown(){
-		
-		this.mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
-		this.mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
-
-		const vector = new THREE.Vector3( this.mouse.x, this.mouse.y, 0.5);
-		vector.unproject( this.camera );
-		const dir = vector.sub( this.camera.position ).normalize();
-		const distance = - this.camera.position.z / dir.z;
-		this.currenPosition = this.camera.position.clone().add( dir.multiplyScalar( distance ) );
-		
-		const pos = this.particles.geometry.attributes.position;
-		this.buttom = true;
-		this.data.ease = .01;
-		
-	}
-
-	onMouseUp(){
-
-		this.buttom = false;
-		this.data.ease = .05;
-	}
-
-	onMouseMove( ) { 
-
-	    this.mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
-	    this.mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
-
-	}
-
-	render( level ){ 
-
-		const time = ((.001 * performance.now())%12)/12;
-		const zigzagTime = (1 + (Math.sin( time * 2 * Math.PI )))/6;
-
-		this.raycaster.setFromCamera( this.mouse, this.camera );
-
-		const intersects = this.raycaster.intersectObject( this.planeArea );
-
-		if ( intersects.length > 0 ) {
-
-			const pos = this.particles.geometry.attributes.position;
-			const copy = this.geometryCopy.attributes.position;
-			const coulors = this.particles.geometry.attributes.customColor;
-			const size = this.particles.geometry.attributes.size;
-
-		    const mx = intersects[ 0 ].point.x;
-		    const my = intersects[ 0 ].point.y;
-		    const mz = intersects[ 0 ].point.z;
-
-		    for ( var i = 0, l = pos.count; i < l; i++) {
-
-		    	const initX = copy.getX(i);
-		    	const initY = copy.getY(i);
-		    	const initZ = copy.getZ(i);
-
-		    	let px = pos.getX(i);
-		    	let py = pos.getY(i);
-		    	let pz = pos.getZ(i);
-
-		    	this.colorChange.setHSL( .5, 1 , 1 )
-		    	coulors.setXYZ( i, this.colorChange.r, this.colorChange.g, this.colorChange.b )
-		    	coulors.needsUpdate = true;
-
-		    	size.array[ i ]  = this.data.particleSize;
-		    	size.needsUpdate = true;
-
-		    	let dx = mx - px;
-		    	let dy = my - py;
-		    	const dz = mz - pz;
-
-		    	const mouseDistance = this.distance( mx, my, px, py )
-		    	let d = ( dx = mx - px ) * dx + ( dy = my - py ) * dy;
-		    	const f = - this.data.area/d;
-
-		    	if( this.buttom ){ 
-
-		    		const t = Math.atan2( dy, dx );
-		    		px -= f * Math.cos( t );
-		    		py -= f * Math.sin( t );
-
-		    		this.colorChange.setHSL( .5 + zigzagTime, 1.0 , .5 )
-		    		coulors.setXYZ( i, this.colorChange.r, this.colorChange.g, this.colorChange.b )
-		    		coulors.needsUpdate = true;
-
-		    		if ((px > (initX + 70)) || ( px < (initX - 70)) || (py > (initY + 70) || ( py < (initY - 70)))){
-
-		    			this.colorChange.setHSL( .15, 1.0 , .5 )
-		    			coulors.setXYZ( i, this.colorChange.r, this.colorChange.g, this.colorChange.b )
-		    			coulors.needsUpdate = true;
-
-		    		}
-
-		    	}else{
-		    	
-			    	if( mouseDistance < this.data.area ){
-
-			    		if(i%5==0){
-
-			    			const t = Math.atan2( dy, dx );
-			    			px -= .03 * Math.cos( t );
-			    			py -= .03 * Math.sin( t );
-
-			    			this.colorChange.setHSL( .15 , 1.0 , .5 )
-			    			coulors.setXYZ( i, this.colorChange.r, this.colorChange.g, this.colorChange.b )
-			    			coulors.needsUpdate = true;
-
-							size.array[ i ]  =  this.data.particleSize /1.2;
-							size.needsUpdate = true;
-
-			    		}else{
-
-					    	const t = Math.atan2( dy, dx );
-					    	px += f * Math.cos( t );
-					    	py += f * Math.sin( t );
-
-					    	pos.setXYZ( i, px, py, pz );
-					    	pos.needsUpdate = true;
-
-					    	size.array[ i ]  = this.data.particleSize * 1.3 ;
-					    	size.needsUpdate = true;
-				    	}
-
-			    		if ((px > (initX + 10)) || ( px < (initX - 10)) || (py > (initY + 10) || ( py < (initY - 10)))){
-
-			    			this.colorChange.setHSL( .15, 1.0 , .5 )
-			    			coulors.setXYZ( i, this.colorChange.r, this.colorChange.g, this.colorChange.b )
-			    			coulors.needsUpdate = true;
-
-			    			size.array[ i ]  = this.data.particleSize /1.8;
-			    			size.needsUpdate = true;
-
-			    		}
-			    	}
-
-		    	}
-
-		    	px += ( initX  - px ) * this.data.ease;
-		    	py += ( initY  - py ) * this.data.ease;
-		    	pz += ( initZ  - pz ) * this.data.ease;
-
-		    	pos.setXYZ( i, px, py, pz );
-		    	pos.needsUpdate = true;
-
-		    }
-		}
-	}
-
-	createText(){ 
-
-		let thePoints = [];
-
-		let shapes = this.font.generateShapes( this.data.text , this.data.textSize  );
-		let geometry = new THREE.ShapeGeometry( shapes );
-		geometry.computeBoundingBox();
-	
-		const xMid = - 0.5 * ( geometry.boundingBox.max.x - geometry.boundingBox.min.x );
-		const yMid =  (geometry.boundingBox.max.y - geometry.boundingBox.min.y)/2.85;
-
-		geometry.center();
-
-		let holeShapes = [];
-
-		for ( let q = 0; q < shapes.length; q ++ ) {
-
-			let shape = shapes[ q ];
-
-			if ( shape.holes && shape.holes.length > 0 ) {
-
-				for ( let  j = 0; j < shape.holes.length; j ++ ) {
-
-					let  hole = shape.holes[ j ];
-					holeShapes.push( hole );
-				}
-			}
-
-		}
-		shapes.push.apply( shapes, holeShapes );
-
-		let colors = [];
-		let sizes = [];
-					
-		for ( let  x = 0; x < shapes.length; x ++ ) {
-
-			let shape = shapes[ x ];
-
-			const amountPoints = ( shape.type == 'Path') ? this.data.amount/2 : this.data.amount;
-
-			let points = shape.getSpacedPoints( amountPoints ) ;
-
-			points.forEach( ( element, z ) => {
-						
-				const a = new THREE.Vector3( element.x, element.y, 0 );
-				thePoints.push( a );
-				colors.push( this.colorChange.r, this.colorChange.g, this.colorChange.b);
-				sizes.push( 1 )
-
-				});
-		}
-
-		let geoParticles = new THREE.BufferGeometry().setFromPoints( thePoints );
-		geoParticles.translate( xMid, yMid, 0 );
-				
-		geoParticles.setAttribute( 'customColor', new THREE.Float32BufferAttribute( colors, 3 ) );
-		geoParticles.setAttribute( 'size', new THREE.Float32BufferAttribute( sizes, 1) );
-
-		const material = new THREE.ShaderMaterial( {
-
-			uniforms: {
-				color: { value: new THREE.Color( 0xffffff ) },
-				pointTexture: { value: this.particleImg }
-			},
-			vertexShader: document.getElementById( 'vertexshader' ).textContent,
-			fragmentShader: document.getElementById( 'fragmentshader' ).textContent,
-
-			blending: THREE.AdditiveBlending,
-			depthTest: false,
-			transparent: true,
-		} );
-
-		this.particles = new THREE.Points( geoParticles, material );
-		this.scene.add( this.particles );
-
-		this.geometryCopy = new THREE.BufferGeometry();
-		this.geometryCopy.copy( this.particles.geometry );
-		
-	}
-
-	visibleHeightAtZDepth ( depth, camera ) {
-
-	  const cameraOffset = camera.position.z;
-	  if ( depth < cameraOffset ) depth -= cameraOffset;
-	  else depth += cameraOffset;
-
-	  const vFOV = camera.fov * Math.PI / 180; 
-
-	  return 2 * Math.tan( vFOV / 2 ) * Math.abs( depth );
-	}
-
-	visibleWidthAtZDepth( depth, camera ) {
-
-	  const height = this.visibleHeightAtZDepth( depth, camera );
-	  return height * camera.aspect;
-
-	}
-
-	distance (x1, y1, x2, y2){
-	   
-	    return Math.sqrt(Math.pow((x1 - x2), 2) + Math.pow((y1 - y2), 2));
-	}
-}
-
-</script>
+  <!-- loading -->
+  <div id="loading">
+    <div id="loading-center">
+      <img src="assets/loader.gif" alt="loader">
+    </div>
+
+    <div class="loading-text">
+      <ul>
+        <li>"Design is intelligence made visible." <i>Alina Wheeler</i></li>
+      </ul>
+    </div>
+
+  </div>
+  <!-- loading End -->
+
+  <div id="page" class="site">
+    <a class="skip-link screen-reader-text" href="#content"></a>
+
+
+    <header class="wow fadeInDown" data-wow-delay="0.4s">
+      <div class="container-fluid main-header">
+        <div class="row">
+          <div class="col-sm-12">
+            <nav class="navbar navbar-expand-lg navbar-light" onClick="color_hover_with_XY(event,0,0)">
+              <a class="navbar-brand" href="./index.html">
+                <div class="iq-img1">
+                  <img class="img-fluid logo" src="assets/logo.png" alt="senarc">
+                  <span style="color: #ffffff; font-weight: bolder !important; text-transform: uppercase;">Senarc</span>
+                </div>
+              </a>
+
+
+              <a class="navbar-brand2" href="#">
+                <div class="iq-img2">
+                  <img class="img-fluid logo1" src="assets/logo.png" alt="senarc">
+                  <img class="img-fluid logo2" src="assets/wheel.png" alt="senarc">
+                </div>
+              </a>
+
+
+
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              </div>
+            </nav>
+            <div class="menu-icon" onClick="color_hover_with_XY(event,0,0)">
+              <input id="menu-icon-checkbox" type="checkbox">
+              <label for="menu-icon" id="menu-icon">menu</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="slide-bar-menu">
+      <ul class="menu-info">
+        <div class="menu-top-menu2-container">
+          <ul id="top-menu2" class="navbar-nav justify-content-center">
+            <li id="menu-item-908" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-908"><a
+              href="./index.html">Home</a></li>
+            <li id="menu-item-1363" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1363"><a
+                href="./portfolio.html">Projects</a></li>
+            <li id="menu-item-1554" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1554"><a
+                href="./contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </ul>
+    </div>
+
+
+    <div class="hd-left-info">
+      <div class="mouse"></div>
+    </div>
+
+    <canvas class="banner_canvas" id="canvas_banner"></canvas>
+
+
+    <div id="banner">
+      <div class="iq-top-banner" data-depth="0.05">
+        <img class="img-fluid" src="assets/senark.png" alt="senarc">
+      </div>
+    </div>
+
+
+    <div class="hd-info wow fadeInRight" data-wow-delay="0.8s">
+      <ul class="sc-icon" onClick="color_hover_with_XY(event,0,0)">
+        <li><a href="https://github.com/Senarc-Studios/" target="_blank">Gt</a></li>
+        <li><a href="https://twitter.com/SenarcStudios" target="_blank">Tw</a></li>
+        <li><a href="https://discord.gg/BavgXxdn8t" target="_blank">Ds</a></li>
+      </ul>
+    </div>
+    <div class="site-content-contain">
+      <div id="content" class="site-content">
+
+        <div id="primary" class="content-area">
+          <main id="main" class="site-main">
+
+            <article id="post-6" class="senarc-panel  post-6 page type-page status-publish hentry">
+
+
+              <div class="panel-content">
+                <div class="container-fluid">
+                  <div class="sf-content">
+                    <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true"
+                      class="vc_row wpb_row vc_row-fluid banner-in">
+                      <div class="wpb_column vc_column_container vc_col-sm-12">
+                        <div class="vc_column-inner">
+                          <div class="wpb_wrapper">
+                            <div id="iq-banner" class="banner wow fadeIn" data-wow-delay="1.9s"
+                              onmousemove="color_hover(event)">
+                              <div class="container">
+                                <div class="row justify-content-center">
+                                  <div class="col-xl-10">
+                                    <div id="bannertext">
+                                      <div data-depth="0.10">
+                                        <h6>We ARE</h6>
+                                        <h1>Powerful by <span>Default.</span> Secure by design</h1>
+                                      </div>
+                                    </div>
+                                    <div id="scene">
+                                      <div class="bann-img" data-depth="0.10">
+                                        <img
+                                          src="assets/01.png"
+                                          alt="bannerimg1" />
+                                      </div>
+
+                                    </div>
+                                    <a class="button" href="./contact.html">
+                                      <span>Say NO to boring code errors</span>
+                                      <div class="line"></div>
+                                    </a>
+
+                                    <a href="#about-us" class="line-button">
+                                      <div class="line"></div>
+                                      <span>Explore</span>
+                                    </a>
+                                    <div class="mouse-move">
+                                      <a class="boom" onClick="multipleSplats(6)">Click</a>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="vc_row-full-width vc_clearfix"></div>
+                    <div id="about-us"
+                      class="vc_row wpb_row vc_row-fluid white-box vc_custom_1563626954744 vc_row-has-fill">
+                      <div class="wpb_column vc_column_container vc_col-sm-12">
+                        <div class="vc_column-inner">
+                          <div class="wpb_wrapper">
+                            <div class="vc_row wpb_row vc_inner vc_row-fluid vc_custom_1560861168150">
+                              <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-6 vc_col-md-6">
+                                <div class="vc_column-inner">
+                                  <div class="wpb_wrapper">
+                                    <h6 style="text-align: left"
+                                      class="vc_custom_heading text-uppercase wpb_animate_when_almost_visible wpb_fadeInUp fadeInUp">
+                                      About Us</h6>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="vc_row wpb_row vc_inner vc_row-fluid">
+                              <div
+                                class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-offset-1 vc_col-lg-6 vc_col-md-6">
+                                <div class="vc_column-inner">
+                                  <div class="wpb_wrapper">
+                                    <h2 style="text-align: left"
+                                      class="vc_custom_heading wpb_animate_when_almost_visible wpb_fadeInUp fadeInUp">We
+                                      design projects that aid developers.</h2>
+                                    <h4 style="color: #ff7272;line-height: 5;text-align: left"
+                                      class="vc_custom_heading wpb_animate_when_almost_visible wpb_fadeInUp fadeInUp">
+                                      Design. Code. Experience.</h4>
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="mt-5 pt-5 wpb_column vc_column_container vc_col-sm-12 vc_col-lg-5 vc_col-md-6">
+                                <div class="vc_column-inner">
+                                  <div class="wpb_wrapper">
+                                    <div
+                                      class="wpb_text_column wpb_content_element  wpb_animate_when_almost_visible wpb_fadeInUp fadeInUp">
+                                      <div class="wpb_wrapper">
+                                        <p class="text-justify">We are a group of developers that are committed to
+                                          supporting one another. Bring your own projects, join the community, and work
+                                          on them as you like! You may bring your project and submit it to Senarc, or
+                                          you can create something with the assistance of the neighbourhood and Senarc
+                                          as a whole.</p>
+
+                                      </div>
+                                    </div>
+
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="vc_row wpb_row vc_row-fluid vc_custom_1562676942695">
+                      <div class="wpb_column vc_column_container vc_col-sm-12">
+                        <div class="vc_column-inner">
+                          <div class="wpb_wrapper">
+                            <div class="vc_row wpb_row vc_inner vc_row-fluid">
+                              <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-7 vc_col-md-7">
+                                <div class="vc_column-inner vc_custom_1563341092989">
+                                  <div class="wpb_wrapper">
+                                    <div class="title-box title-white  text-left wow fadeInUp"
+                                      onmousemove="color_hover(event)" data-wow-delay="0.9">
+                                      <h2 class="title">Our <span>Projects</span> </h2>
+                                      <p>An index of the projects we created from scratch.</p>
+                                    </div>
+                                    <div class="button-position wow fadeInUp text-left" data-wow-delay="0.5s">
+                                      <a class="button "
+                                        href="./portfolio.html"><span>Explore All</span>
+                                        <div class="line"></div>
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-sm-12">
+                                <div class="iq-masonry-block" onmousemove="color_hover(event)">
+                                  <div class="isotope-filters isotope-tooltip"><button data-filter=""
+                                      class="active">All</button><button data-filter=".android-and-ios">Android and
+                                      IOS</button><button data-filter=".html">HTML</button><button
+                                      data-filter=".wordpress">WordPress</button>
+                                  </div>
+                                  <div class="iq-masonry iq-columns-3 ">
+                                    <div class="iq-masonry-item it1 wordpress">
+                                      <div class="iq-portfolio-box wow fadeInUp ">
+                                        <div class="iq-portfolio-image clearfix">
+                                          <a
+                                            href="">
+                                            <img src="assets/proj-1.png" class="img-fluid center-block" data-tilt
+                                              data-tilt-max="10" data-tilt-speed="400" data-tilt-perspective="400"
+                                              alt="blogimage1">
+                                          </a>
+                                        </div>
+                                        <div class="iq-portfolio-info">
+                                          <h4><a
+                                              href="">Senarc
+                                              Core</a></h4>
+                                          <span>The backend API that controls and manages Senarc as a whole.</span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="iq-masonry-item it2 android-and-ios">
+                                      <div class="iq-portfolio-box wow fadeInUp ">
+                                        <div class="iq-portfolio-image clearfix">
+                                          <a
+                                            href="">
+                                            <img src="assets/proj-2.png" class="img-fluid center-block" data-tilt
+                                              data-tilt-max="10" data-tilt-speed="400" data-tilt-perspective="400"
+                                              alt="blogimage2">
+                                          </a>
+                                        </div>
+                                        <div class="iq-portfolio-info">
+                                          <h4><a
+                                              href="">Gatepoint</a>
+                                          </h4>
+                                          <span>An API Framework for Discord Interactions.</span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="iq-masonry-item it3 wordpress last">
+                                      <div class="iq-portfolio-box wow fadeInUp ">
+                                        <div class="iq-portfolio-image clearfix">
+                                          <a
+                                            href="">
+                                            <img src="assets/A.png" class="img-fluid center-block" data-tilt
+                                              data-tilt-max="10" data-tilt-speed="400" data-tilt-perspective="400"
+                                              alt="blogimage3">
+                                          </a>
+                                        </div>
+                                        <div class="iq-portfolio-info">
+                                          <h4><a
+                                              href="">Pastebin
+                                              API</a></h4>
+                                          <span>A Pastebin build from scratch with good customisability and self-hosting
+                                            in mind.</span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="img-one-ee" id="sceneq">
+                              <div class="img-box" data-depth="0.10">
+                                <img src="assets/1.png"
+                                  alt="fssds">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="vc_row wpb_row vc_row-fluid senarc-fancy">
+                      <div class="wpb_column vc_column_container vc_col-sm-12">
+                        <div class="vc_column-inner">
+                          <div class="wpb_wrapper">
+                            <div class="vc_row wpb_row vc_inner vc_row-fluid">
+                              <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-7 vc_col-md-7">
+                                <div class="vc_column-inner">
+                                  <div class="wpb_wrapper">
+                                    <div class="title-box title-white  text-left wow fadeInUp"
+                                      onmousemove="color_hover(event)" data-wow-delay="0.9">
+                                      <h2 class="title"><span>Benefits</span></h2>
+                                      <p>Some of the benefits of joining our community.</p>
+                                    </div>
+
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="vc_row wpb_row vc_inner vc_row-fluid vc_column-gap-30">
+                              <div
+                                class="mt-5 pt-5 wpb_column vc_column_container vc_col-sm-12 vc_col-lg-4 vc_col-md-4">
+                                <div class="vc_column-inner">
+                                  <div class="wpb_wrapper">
+                                    <div class="senarc-future wow fadeInUp text-" onmousemove="color_hover(event)">
+                                      <div class="img">
+                                        <img
+                                          src="assets/01-1-150x150.png"
+                                          alt="fancybox" />
+                                      </div>
+                                      <h4 class="mb-2">Help & Support</h4>
+                                      <p>You can get help with setting things up on your community or server.</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="mt-5 wpb_column vc_column_container vc_col-sm-12 vc_col-lg-4 vc_col-md-4">
+                                <div class="vc_column-inner">
+                                  <div class="wpb_wrapper">
+                                    <div class="senarc-future wow fadeInUp text-" onmousemove="color_hover(event)">
+                                      <div class="img">
+                                        <img
+                                          src="assets/02-150x150.png"
+                                          alt="fancybox" />
+                                      </div>
+                                      <h4 class="mb-2">Join Our Netowrk</h4>
+                                      <p>Join us and we can help each other out and build a big and amazing community!
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-4 vc_col-md-4">
+                                <div class="vc_column-inner">
+                                  <div class="wpb_wrapper">
+                                    <div class="senarc-future wow fadeInUp text-" onmousemove="color_hover(event)">
+                                      <div class="img">
+                                        <img
+                                          src="assets/03-1-150x150.png"
+                                          alt="fancybox" />
+                                      </div>
+                                      <h4 class="mb-2">Parts of the Community</h4>
+                                      <p>This organisation is open to any community and happy to work with anyone.</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="img-one-e" id="sceneqq">
+                              <div class="img-box" data-depth="0.10">
+                                <img src="assets/4.png"
+                                  alt="fssdsss">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div data-vc-full-width="true" data-vc-full-width-init="false" class="vc_row wpb_row vc_row-fluid">
+                      <div class="wpb_column vc_column_container vc_col-sm-12">
+                        <div class="vc_column-inner">
+                          <div class="wpb_wrapper">
+                            <div class="vc_row wpb_row vc_inner vc_row-fluid">
+                              <div
+                                class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-offset-3 vc_col-lg-6 vc_col-md-offset-2 vc_col-md-8 vc_col-sm-offset-0">
+                                <div class="vc_column-inner">
+                                  <div class="wpb_wrapper">
+                                    <div class="title-box title-white  text-center wow fadeInUp"
+                                      onmousemove="color_hover(event)" data-wow-delay="0.9">
+                                      <h2 class="title">What we <span>Offer</span> </h2>
+                                      <p>We offer several things, but here are few we are
+                                        proud with</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="vc_row wpb_row vc_inner vc_row-fluid">
+                              <div class="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-3 vc_col-md-3">
+                                <div class="vc_column-inner">
+                                  <div class="wpb_wrapper">
+                                    <div class="senarc-awards wow fadeInUp" onmousemove="color_hover(event)"> <img
+                                        src="assets/domain.png" alt="awards" />
+                                      <h5><span>Subdomains</span></h5>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-3 vc_col-md-3">
+                                <div class="vc_column-inner vc_custom_1562240267407">
+                                  <div class="wpb_wrapper">
+                                    <div class="senarc-awards wow fadeInUp" onmousemove="color_hover(event)"> <img
+                                        src="assets/support.png" alt="awards" />
+                                      <h5><span>Technical Support</span></h5>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-3 vc_col-md-3">
+                                <div class="vc_column-inner">
+                                  <div class="wpb_wrapper">
+                                    <div class="senarc-awards wow fadeInUp" onmousemove="color_hover(event)"> <img
+                                        src="assets/email.png" alt="awards" />
+                                      <h5><span>Custom Emails</span></h5>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="wpb_column vc_column_container vc_col-sm-6 vc_col-lg-3 vc_col-md-3">
+                                <div class="vc_column-inner vc_custom_1562240288183">
+                                  <div class="wpb_wrapper">
+                                    <div class="senarc-awards wow fadeInUp" onmousemove="color_hover(event)"> <img
+                                        src="assets/hosting.png" alt="awards" />
+                                      <h5><span>Hosting</span></h5>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="vc_row-full-width vc_clearfix"></div>
+                    <div class="vc_row wpb_row vc_row-fluid">
+                      <div class="wpb_column vc_column_container vc_col-sm-12">
+                        <div class="vc_column-inner">
+                          <div class="wpb_wrapper">
+                            <div class="vc_row wpb_row vc_inner vc_row-fluid">
+                              <div
+                                class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-7 vc_col-md-7 vc_col-sm-offset-0">
+                                <div class="vc_column-inner">
+                                  <div class="wpb_wrapper">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="img-one-w" id="sceneqw">
+                              <div class="img-box" data-depth="0.10">
+                                <img src="assets/5.png"
+                                  alt="fss">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="vc_row wpb_row vc_row-fluid white-box vc_custom_1562669902132 vc_row-has-fill">
+                      <div class="wpb_column vc_column_container vc_col-sm-12">
+                        <div class="vc_column-inner">
+                          <div class="wpb_wrapper">
+                            <div class="vc_row wpb_row vc_inner vc_row-fluid vc_custom_1560861168150">
+                              <div class="wpb_column vc_column_container vc_col-sm-6">
+                                <div class="vc_column-inner">
+                                  <div class="wpb_wrapper">
+                                    <h6 style="text-align: left"
+                                      class="vc_custom_heading text-uppercase wpb_animate_when_almost_visible wpb_fadeIn fadeIn">
+                                      High Five!</h6>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="wpb_column vc_column_container vc_col-sm-6">
+                                <div class="vc_column-inner">
+                                  <div class="wpb_wrapper"></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="vc_row wpb_row vc_inner vc_row-fluid">
+                              <div
+                                class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-offset-1 vc_col-lg-6 vc_col-md-6">
+                                <div class="vc_column-inner">
+                                  <div class="wpb_wrapper">
+                                    <h2 style="text-align: left"
+                                      class="vc_custom_heading wpb_animate_when_almost_visible wpb_fadeInUp fadeInUp">
+                                      We’re happy faces based on Mars! Lets catch up.</h2>
+                                    <h2 style="color: #0f33ff;line-height: 3;text-align: left"
+                                      class="vc_custom_heading text-lowercase email-title wpb_animate_when_almost_visible wpb_fadeInUp fadeInUp">
+                                      support@senarc.online</h2>
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="mt-5 pt-5 wpb_column vc_column_container vc_col-sm-12 vc_col-lg-5 vc_col-md-6">
+                                <div class="vc_column-inner">
+                                  <div class="wpb_wrapper">
+                                    <div
+                                      class="wpb_text_column wpb_content_element  wpb_animate_when_almost_visible wpb_fadeIn fadeIn">
+                                      <div class="wpb_wrapper">
+                                        <p class="text-justify">Get in touch with us to create, re-build, or solve
+                                          projects that speak creativity, above and beyond.</p>
+
+                                      </div>
+                                    </div>
+                                    <div class="button-position wow fadeIn text-left" data-wow-delay="0.5s">
+                                      <a class="button "
+                                        href="./contact.html"><span>Connect with
+                                          us</span>
+                                        <div class="line"></div>
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div><!-- .sf-content -->
+
+                </div><!-- .container -->
+              </div><!-- .panel-content -->
+
+            </article><!-- #post-## -->
+
+          </main><!-- #main -->
+        </div><!-- #primary -->
+      </div><!-- #content -->
+
+      <!-- Footer start-->
+      <footer id="contact" onmousemove="color_hover(event)" class="">
+
+        <!-- Footer Style 1 start-->
+        <div class="container">
+
+          <div class="footer-top wow fadeInUp">
+            <div class="row align-items-center">
+              <div class="col-lg-4 col-md-4 col-sm-6 ">
+
+
+                <div class="footer-logo">
+                  <a href="">
+                    <img class="img-fluid" src="assets/logo-2.png" alt="senarc1"> <span
+                      style="color: #fff; font-weight: bolder;">Senarc</span>
+                  </a>
+                </div>
+
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6 ">
+                <div class="widget_text widget">
+                  <div class="textwidget custom-html-widget"></div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6 ">
+                <div class="widget">
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <ul class="iq-contact">
+
+                        <li>
+                          <a href="#"></a>
+                        </li>
+
+                        <li>
+                          <a href="mailto:support@senarc.online">support@senarc.online</a>
+                        </li>
+
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="senarc_copyright wow fadeInUp footer-logo">
+            <div class="pt-3 pb-3">
+              <div class="row flex-row-reverse justify-content-between">
+                <div class="col-12 mr-auto">
+                  <span class="copyright">
+                    <h6 class=""
+                      style="font-size: 16px; font-weight: 400; margin: 0px 0px 3px; padding: 5px 0px 0px; display: inline-block; line-height: 1.3; text-align: center;">
+                      © 2023. All rights reserved.</h6>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    </div><!-- .site-content-contain -->
+  </div><!-- #page -->
+
+  <!-- === back-to-top === -->
+
+  <div id="back-to-top">
+    <a id="top"><img src="assets/bc.png" alt="loader"></a>
+  </div>
+  <!-- === back-to-top End === -->
+
+  <link rel='stylesheet' id='vc_animate-css-css' href='assets/css/animate.min.css' media='all' />
+  <script src='assets/js/popper.min.js' id='popper-js'></script>
+  <script src='assets/js/bootstrap.min.js' id='bootstrap-js'></script>
+  <script src='assets/js/parallax.min.js' id='Parallaxjs-js'></script>
+  <script src='assets/js/skrollr.js' id='Skrollrjs-js'></script>
+  <script src='assets/js/appear.js' id='appear-js'></script>
+  <script src='assets/js/jquery.magnific-popup.min.js' id='jquery-magnific-js'></script>
+  <script src='assets/js/isotope.pkgd.min.js' id='isotope-js'></script>
+  <script src='assets/js/owl.carousel.min.js' id='carousel-js'></script>
+  <script src='assets/js/retina.min.js' id='retina-js'></script>
+  <script src='assets/js/script.js' id='Scriptjs-js'></script>
+  <script src='assets/js/wow.min.js' id='wow-js'></script>
+  <script src='assets/js/TweenMax.min.js' id='Tweenmaxjs-js'></script>
+  <script src='assets/js/script2.js' id='Scriptjs2-js'></script>
+  <script src='assets/js/tilt.jquery.js' id='Tilljs-js'></script>
+  <script src='assets/js/senarc-custom.js' id='senarc-custom-js'></script>
 </body>
+
 </html>
